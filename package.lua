@@ -4,6 +4,6 @@ return {
   description = 'Simple example running dnode on heroku.', 
   author = "Paul d'Hubert <paul.dhubert@yandex.ru>", 
   dependencies = { 
-		['dnode'] = 'https://github.com/pauldub/luvit-dnode/archive/master.zip'
+		['dnode'] = 'https://github.com/pauldub/luvit-dnode/archive/master.tar.gz'
   },
  }
