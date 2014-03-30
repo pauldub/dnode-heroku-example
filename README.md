@@ -1,21 +1,31 @@
 dnode-heroku-example
 ====================
 
-Running a dnode process on Heroku slugs, this is not actually tested with Heroku but with docker and probably with flynn/slugbuilder and flynn/slugrunner soon. 
+Running a dnode process on Heroku slugs, this is not actually tested with Heroku but with docker and probably with flynn/slugbuilder and flynn/slugrunner soon.
 
-At the moment host addresses are not yet implemented in dnode, but you can still telnet to it: 
+You can then start requesting the server:
+
+- Push a release and then start luvit
 
 ```sh
 > git push dokku master
 ...
 =====> Application deployed:
-       http://localhost:49164
+			 http://example.com:49164
 
-> telnet dokku.example.com 49164
-
-Connected to dokku.example.com
-Escape character is '^]'.
-{"callbacks":[[1,"hello"]],"arguments":[{"hello":"[Function]"}],"links":[],"method":"methods"}
+> luvit
 ```
 
-It should be easy to support HTTP using streams.
+- Now you can connect to the remote host.
+
+```lua
+local dnode = require('dnode')
+
+local client = dnode:new()
+
+client:connect(49164, 'example.com', function(remote)
+	remote.hello(msg)
+		print(msg)
+	end
+end)
+```
