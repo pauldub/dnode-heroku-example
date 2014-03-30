@@ -3,10 +3,11 @@ local dnode = require('dnode')
 
 local port = env.get('PORT') or 7070
 
-print("Starting server on port " .. port)
-dnode:listen({
+local server = dnode:new({
 	hello = function(reply) 
 		reply("hello world")
 	end
-}, port)
+})
 
+print("Starting server on port " .. port)
+server:listen(port, '0.0.0.0')
