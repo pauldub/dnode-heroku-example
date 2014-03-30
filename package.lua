@@ -1,5 +1,5 @@
 return { 
-  name = 'dnode-example',
+  name = 'dnode-heroku-example',
   version = '0.0.1', 
   description = 'Simple example running dnode on heroku.', 
   author = "Paul d'Hubert <paul.dhubert@yandex.ru>", 
