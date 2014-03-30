@@ -5,7 +5,7 @@ Running a dnode process on Heroku slugs, this is not actually tested with Heroku
 
 At the moment host addresses are not yet implemented in dnode, but you can still telnet to it: 
 
-```
+```sh
 > git push dokku master
 ...
 =====> Application deployed:
